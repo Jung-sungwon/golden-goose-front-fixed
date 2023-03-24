@@ -1,7 +1,7 @@
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  target: "serverless",
+  serverless: true,
   // async headers() {
   //   return [
   //     {
