@@ -23,6 +23,9 @@ function SideNav(props) {
     axios
       .get(`${process.env.NEXT_PUBLIC_siteUrl}/api/getcookie`, {
         withCredentials: true,
+        headers: {
+          Authorization: "Bearer " + cookies.token,
+        },
       })
       .then((res) => {
         setTok(res.data);
