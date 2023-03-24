@@ -12,6 +12,7 @@ function Logout() {
         withCredentials: true,
       })
       .then((res) => {
+        removeCookie("token");
         console.log("로그아웃 ");
       });
 

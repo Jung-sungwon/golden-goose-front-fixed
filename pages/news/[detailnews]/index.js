@@ -18,33 +18,15 @@ function News(props) {
 export default News;
 
 export async function getServerSideProps() {
-  // const newsData = axios
-  //   .get(`${process.env.NEXT_PUBLIC_siteUrl}/api/news`)
-  //   .then((res) => {
-  //     return res.data;
-  //   })
-  //   .catch((e) => {
-  //     console.log("뉴스데이터 못가져옴 에러 : ", e);
-  //   });
-
-  const testNews = async () => {
-    console.log("테스트 뉴~스");
-    retrun(
-      await axios
-        .get(`${process.env.NEXT_PUBLIC_siteUrl}/api/news`)
-        .then((res) => {
-          return res.data;
-        })
-    );
-  };
-
-  testNews();
-  let result = testNews();
+  const newsData = axios
+    .get(`${process.env.NEXT_PUBLIC_siteUrl}/api/news`)
+    .then((res) => {
+      return res.data;
+    });
 
   return {
     props: {
-      // news: await newsData,
-      news: result,
+      news: await newsData,
     },
   };
 }
