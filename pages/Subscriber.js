@@ -4,8 +4,10 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useCookies } from "react-cookie";
 
 function Subscriber() {
+  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   const [user, setUser] = useState({
     name: "",
     email: "",

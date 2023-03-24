@@ -5,8 +5,10 @@ import { useRouter } from "next/router";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import UserEdit from "@/components/UserEdit";
+import { useCookies } from "react-cookie";
 
 function Admin() {
+  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   const [user, setUser] = useState({
     name: "",
     email: "",
