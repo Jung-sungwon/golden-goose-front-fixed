@@ -10,8 +10,7 @@ function News(props) {
 
   return (
     <div className={style.newsBoard}>
-      {/* <Newss data={props.news} pageQuery={detailnews} /> */}
-      {props.Lo}
+      <Newss data={props.news} pageQuery={detailnews} />
     </div>
   );
 }
@@ -19,16 +18,15 @@ function News(props) {
 export default News;
 
 export async function getServerSideProps() {
-  // const newsData = axios
-  //   .get(`${process.env.NEXT_PUBLIC_siteUrl}/api/news`)
-  //   .then((res) => {
-  //     return res.data;
-  //   });
+  const newsData = axios
+    .get(`${process.env.NEXT_PUBLIC_siteUrl}/api/news`)
+    .then((res) => {
+      return res.data;
+    });
 
   return {
     props: {
-      // news: await newsData,
-      Lo: "안녕",
+      news: await newsData,
     },
   };
 }
