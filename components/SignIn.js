@@ -37,7 +37,7 @@ function SignIn() {
       .catch((e) => {});
 
     if (typeof window !== undefined) {
-      location.reload();
+      //location.reload();
     }
 
     setUserData({ email: "", password: "" });

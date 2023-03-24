@@ -9,7 +9,7 @@ import GoldCalculate from "@/components/GoldCalculate";
 
 function Index(props) {
   const clickHandler = (e) => {
-    //window.location.reload();
+    window.location.reload();
   };
 
   return (
