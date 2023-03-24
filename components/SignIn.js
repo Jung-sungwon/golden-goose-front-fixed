@@ -31,7 +31,7 @@ function SignIn() {
       })
       .then((res) => {
         toast(res.data.message);
-
+        setCookie("token", res.data.token);
         setModal(!modal);
       })
       .catch((e) => {});
