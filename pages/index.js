@@ -7,7 +7,7 @@ import MainNews from "@/components/MainNews";
 import LineGraph from "@/components/LineGraph";
 import GoldCalculate from "@/components/GoldCalculate";
 
-function index(props) {
+function Index(props) {
   const clickHandler = (e) => {
     window.location.reload();
   };
@@ -39,7 +39,7 @@ function index(props) {
   );
 }
 
-export default index;
+export default Index;
 
 export async function getServerSideProps() {
   const priceData = axios
