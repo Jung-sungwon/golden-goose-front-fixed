@@ -22,6 +22,9 @@ export async function getServerSideProps() {
     .get(`${process.env.NEXT_PUBLIC_siteUrl}/api/news`)
     .then((res) => {
       return res.data;
+    })
+    .catch((e) => {
+      console.log("뉴스데이터 못가져옴 에러 : ", e);
     });
 
   return {
